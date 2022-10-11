@@ -1,0 +1,63 @@
+@font-face{
+    font-family: "Digital";
+    src: url("./fonts/font.ttf") format("truetype");
+  }
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.calcBody {
+    display: flex;
+    flex-direction: column;
+    width: 50vh;
+    height: 70vh;
+    background-color: #1b1c1b;
+    border-radius: 20px;
+    position: relative;
+}
+
+.resultWindow {
+    display:flex;
+    align-items:center;
+    justify-content: right;
+    width: 40vh;
+    height: 15vh;
+    min-height: 7vh;
+    background-color: #7d8c73;
+    position: relative;
+    align-self: center;
+    margin-top: 30px;
+    border-radius: 20px;
+    
+}
+
+.resultWindow span {
+    display:inline-block;
+    overflow: hidden;
+    margin-right: 20px;
+    font-family: Digital;
+    font-size: 50px;
+    position: relative;
+}
+
+.Buttons {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50vh;
+    min-height: 50vh;
+    margin: 30px;
+}
+.calcButton {
+    flex-grow: 1;
+    flex-basis: 25%;
+    color: whitesmoke;
+    background-color: gray;
+    border-radius: 2px;
+    border-radius: 5px;
+    font-size: 30px;
+}
