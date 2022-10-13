@@ -17,7 +17,7 @@ buttons.forEach(button => {
 
 equals.addEventListener('click', () => {
     try {
-        displayData = eval(displayData);
+        displayData = eval(displayData); //try and avoid using eval as it's considered a security risk and is often used by malicious code
         display.textContent = displayData;
     }
     catch(e)

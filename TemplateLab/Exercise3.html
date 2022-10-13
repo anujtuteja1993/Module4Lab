@@ -42,23 +42,27 @@
     portfolio: [
       {
         title: "portrait",
-        url: "https://collectionapi.metmuseum.org/api /collection/v1/iiif/436532/1671316/main-image",
+        url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image",
       },
       {
         title: "sky",
-        url: "https://mymodernmet.com/wp/wp- content/uploads/2020/11/White-house-night- van-goh-worldwide-2.jpg",
+        url: "https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg",
       },
     ],
   };
 
-  const portfolio = artist.portfolio;
-  console.log(portfolio);
+  //const portfolio = artist.portfolio;
+  //console.log(portfolio);
   function addCard() {
     const template = document
       .getElementById("card-template")
       .content.cloneNode(true);
     template.querySelector(".card-title").innerText = artist.name;
-    template.querySelector(".card-text").innerText = "Lorem ipsum dorem ultum";
+    //template.querySelector(".card-text").innerText = "Lorem ipsum dorem ultum";
+    for (let work of artist.portfolio)
+    {
+      template.querySelector(".card-text").innerHTML += '<h3>'+work.title+'</h3><img class="portfolio-img" src="'+work.url+'" width="300"/>'
+    }
     document.querySelector("#card-list").appendChild(template);
   }
   if ("content" in document.createElement("template")) {

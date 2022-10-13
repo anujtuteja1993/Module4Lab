@@ -95,16 +95,24 @@
           content: objectContent,
         };
         news.push(pushNews);
-        if ("content" in document.createElement("template")) {
-          news.forEach((card, i) => {
-            console.log(card);
-            setTimeout(() => addCard(card), i * 5000);
-          });
-        }
       }
 
+        if ("content" in document.createElement("template")) {
+          // news.forEach((card, i) => {
+          //   console.log(card);
+          //   setTimeout(() => addCard(card), i * 5000);
+          // });
+
+        //should show all cards every 5 seconds, and then clear them all out before refreshing
+        setInterval(() => {
+            document.getElementById("news").innerHTML = "";
+            console.log('printing news')
+            news.forEach((card, i) => addCard(card))
+          }, 5000)          
+        }
+      
+
       function addCard(info) {
-        document.getElementById("news").innerHTML = "";
         const template = document
           .getElementById("card-template")
           .content.cloneNode(true);

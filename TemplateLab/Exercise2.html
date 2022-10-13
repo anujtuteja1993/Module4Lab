@@ -18,7 +18,7 @@
     </div>
   </div>
 </template>
-<style>
+<style> /* usually put this in the <head> */
   body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #e3f2fd;
@@ -36,8 +36,8 @@
     font-size: 2em;
   }
 </style>
-<script>
-  function addCard() {
+<script> //usually put this just before </body>
+  function addCards() {
     const data = [
       { name: "bob", age: 23 },
       { name: "alice", age: 39 },
@@ -51,6 +51,6 @@
   })
   }
   if ("content" in document.createElement("template")) {
-    addCard();
+    addCards();
   }
 </script>
